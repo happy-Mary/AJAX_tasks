@@ -1,0 +1,26 @@
+.runes {
+  width: 800px;
+  height: 800px;
+  margin: 0 auto;
+}
+.runes table {
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%;
+}
+.runes table td {
+  height: 20%;
+  width: 20%;
+  border: 1px solid grey;
+  text-align: center;
+  vertical-align: middle;
+}
+.runes table td img {
+  visibility: hidden;
+  width: 5%;
+  transition: 3s;
+}
+.runes table td.show > img {
+  visibility: visible;
+  transform: scale(10);
+}

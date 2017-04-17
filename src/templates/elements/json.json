@@ -1,0 +1,55 @@
+{
+    "data": "dbfriends",
+    "friends": [
+        {
+            "id": "1",
+            "name": "Andrew",               
+            "city": "Moscow",               
+            "contacts": {
+                "mobile": "+7 0000000",
+                "email": "andrew@test.ru",
+                "skype": "andrew"
+            }
+        },
+        {
+            "id": "2",
+            "name": "Ivan",
+            "city": "Kiev",
+            "contacts": {
+                "mobile": "+38 0000000",
+                "email": "ivan@test.ua",
+                "skype": "ivan"
+            }
+        },
+        {
+            "id": "4",
+            "name": "Alex",
+            "city": "Minsk",
+            "contacts": {
+                "mobile": "+375 0000000",
+                "email": "alex@test.by",
+                "skype": "alex"
+            }
+        },
+        {
+            "id": "5",
+            "name": "Paul",
+            "city": "Kiev",
+            "contacts": {
+                "mobile": "+38 0000000",
+                "email": "paul@test.ua",
+                "skype": "paul"
+            }
+        },
+        {
+            "id": "6",
+            "name": "Nick",
+            "city": "Minsk",
+            "contacts": {
+                "mobile": "+375 0000000",
+                "email": "nick@test.by",
+                "skype": "nick"
+            }
+        }
+    ]
+}

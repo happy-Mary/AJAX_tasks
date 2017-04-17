@@ -29,7 +29,11 @@ $(".numbers").ready(function() {
     $(this).on('click', 'button', countNumbers);
 });
 
-
+$('.runes').ready(function() {
+    $(this).on('click', 'td', function() {
+        $(this).toggleClass('show');
+    })
+});
 function LoadFirstTabContent() {
     $.ajax({
         url: "src/templates/elements/pc.txt",

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.0//EN' 'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg fill-opacity="1" xmlns:xlink="http://www.w3.org/1999/xlink" color-rendering="auto" color-interpolation="auto" text-rendering="auto" stroke="black" stroke-linecap="square" stroke-miterlimit="10" shape-rendering="auto" stroke-opacity="1" fill="black" stroke-dasharray="none" font-weight="normal" stroke-width="1" xmlns="http://www.w3.org/2000/svg" font-family="&apos;Dialog&apos;" font-style="normal" stroke-linejoin="miter" font-size="12" stroke-dashoffset="0" image-rendering="auto">
+  <!--Unicode Character 'RUNIC LETTER MANNAZ MAN M' (U+16D7)-->
+  <defs id="genericDefs" />
+  <g>
+    <g>
+      <path d="M16.875 365.625 L16.875 168.75 L37.125 168.75 L90 202.5 L142.875 168.75 L163.125 168.75 L163.125 365.625 L142.875 365.625 L142.875 258.1875 L90 223.3125 L37.125 258.1875 L37.125 365.625 L16.875 365.625 ZM37.125 236.25 L74.25 212.9062 L37.125 189.5625 L37.125 236.25 ZM142.875 236.25 L142.875 189.5625 L105.75 212.9062 L142.875 236.25 Z" stroke="none" />
+    </g>
+  </g>
+</svg>
