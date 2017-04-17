@@ -9,6 +9,17 @@ body {
     font-size: 16px;
     font-family: cursive;
     background-color: lightblue;
+    color: #4F4F4F;
+    button,
+    input[type="button"] {
+        text-transform: uppercase;
+        font-size: 18px;
+        cursor: pointer;
+        border: none;
+        border-radius: 3px;
+        transition: 0.3s;
+        color: #4F4F4F;
+    }
 }
 
 header {text-align: center;}
@@ -17,14 +28,8 @@ header {text-align: center;}
     button {
         width: 20%;
         height: 50px;
-        text-transform: uppercase;
-        font-size: 18px;
-        cursor: pointer;
-        border: none;
-        border-radius: 3px;
         background: rgb(64,199,129);
         box-shadow: 0 -3px rgb(53,167,110) inset;
-        transition: 0.3s;
             &:hover,
             &:active, 
             &:focus 
@@ -35,4 +40,19 @@ header {text-align: center;}
 
 .page-content {
     padding: 1rem 10%;
+    button,
+    input[type="button"] {
+        margin: 0 auto;
+        display: block;
+        width: 200px;
+        height: 40px;
+        outline: none;
+        border-radius: 3px;
+        background: rgb(162, 205, 90);
+        border: 2px solid rgb(110, 139, 61);
+        transition: 0.3s;
+            &:hover 
+            {background: rgb(110, 139, 61);}
+    }
+     h2 {text-align: center;}
 }

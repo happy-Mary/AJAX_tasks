@@ -50,6 +50,8 @@ $(document).ready(function() {
     function openTabsTask() {
         $('.page-content').load('src/templates/pages/tabs.html');
         SwitchHash('tabs');
+        // from tabs.js
+        LoadFirstTabContent();
     }
 
     function openRunesTask() {

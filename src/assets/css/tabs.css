@@ -1,0 +1,62 @@
+.tabs {
+  background-color: lightgreen;
+  border: 1px solid #6e8b3d;
+  margin-top: 50px;
+}
+.tabs .tab {
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 50px;
+  text-transform: capitalize;
+  width: 20%;
+  float: left;
+  background: #a2cd5a;
+  border-bottom: 1px solid #6e8b3d;
+  height: 50px;
+  position: relative;
+  cursor: pointer;
+}
+.tabs .tab:not(:nth-of-type(1)) {
+  border-left: 1px solid #6e8b3d;
+}
+.tabs .tab:hover > .tip {
+  visibility: visible;
+}
+.tabs .tip {
+  box-sizing: border-box;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 7px;
+  line-height: 1.4;
+  z-index: 1;
+  left: 20%;
+  bottom: 60px;
+  min-width: 90%;
+  visibility: hidden;
+  padding: 3px;
+}
+.tabs .tip::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #fff transparent transparent transparent;
+}
+.tabs .active {
+  background: #a2cd5a;
+  background: #6e8b3d;
+  border-bottom: none;
+}
+.tabs .tab-text {
+  margin-top: 50px;
+  padding: 20px;
+  text-align: justify;
+}
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}

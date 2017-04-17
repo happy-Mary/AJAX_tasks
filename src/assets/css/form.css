@@ -1,0 +1,25 @@
+form {
+  width: 90%;
+  margin: 0 auto;
+}
+form label {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+}
+form label input {
+  margin: 10px;
+  padding: 5px;
+  width: 80%;
+}
+form button {
+  margin: 0 auto;
+}
+.form-text {
+  padding: 10px;
+  text-align: justify;
+}
+.form-text h2 {
+  text-align: center;
+  text-decoration: underline;
+}
