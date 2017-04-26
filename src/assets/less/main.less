@@ -30,11 +30,14 @@ header {text-align: center;}
         height: 50px;
         background: rgb(64,199,129);
         box-shadow: 0 -3px rgb(53,167,110) inset;
-            &:hover,
+            &:hover
             &:active, 
             &:focus 
             {background: rgb(53, 167, 110);}
 
+        }
+        .activeMenu {
+            background: rgb(53, 167, 110);
         }
 }
 
@@ -55,4 +58,12 @@ header {text-align: center;}
             {background: rgb(110, 139, 61);}
     }
      h2 {text-align: center;}
+
+    table {
+        border-collapse: collapse;
+         td,th {
+            border: 1px solid grey;
+            vertical-align: middle;
+         }
+    }
 }

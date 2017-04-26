@@ -1,0 +1,8 @@
+.parse_data table {
+  width: 60%;
+  margin: 0 auto;
+}
+.parse_data table td,
+.parse_data table th {
+  padding: .5rem;
+}

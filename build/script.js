@@ -28,12 +28,38 @@ $(".numbers").ready(function() {
 
     $(this).on('click', 'button', countNumbers);
 });
-
 $('.runes').ready(function() {
     $(this).on('click', 'td', function() {
         $(this).toggleClass('show');
     })
 });
+ function getTableJson() {
+     $.getJSON('src/templates/elements/json.json',
+         function(data) {
+             var friends = data.friends;
+             var tr_head = $('<tr></tr>');
+             $('.data_table').append(tr_head);
+             // making thead
+             for (var K in friends[0]) {
+                 tr_head.append($('<th></th>').text(K));
+             }
+             // making table content
+             for (var i = 0; i < friends.length; i++) {
+                 var tr = $('<tr></tr>');
+                 $('.data_table').append(tr);
+                 for (var K in friends[i]) {
+                     var item = friends[i][K];
+                     var text = "";
+                     if ($.isPlainObject(item)) {
+                         for (var K in item) { text += K + ": " + item[K] + '<br>'; }
+                     } else {
+                         text += item;
+                     }
+                     tr.append($('<td></td>').html(text));
+                 }
+             }
+         });
+ }
 function LoadFirstTabContent() {
     $.ajax({
         url: "src/templates/elements/pc.txt",
@@ -80,8 +106,9 @@ $(".tabs").ready(function() {
         }
     });
 });
+// document route
 $(document).ready(function() {
-    var hashes = ["main", "form", "table", "runes", "tabs"];
+    var hashes = ["main", "form", "table", "tabs", "runes"];
     window.onhashchange = SwitchToPage;
     var HashState = {};
 
@@ -96,17 +123,29 @@ $(document).ready(function() {
             SPAStateH = { pagename: hashes[0] };
 
         switch (SPAStateH.pagename) {
+            case hashes[0]:
+                $('.page-content').html('<h2>MAIN PAGE</h2>');
+                $('.activeMenu').removeClass('activeMenu');
+                break;
             case hashes[1]:
+                $('.activeMenu').removeClass('activeMenu');
+                $('.menu button').eq(0).addClass('activeMenu');
                 openFormTask();
                 break;
             case hashes[2]:
+                $('.activeMenu').removeClass('activeMenu');
+                $('.menu button').eq(1).addClass('activeMenu');
                 openTableTask();
                 break;
             case hashes[3]:
-                openRunesTask();
+                $('.activeMenu').removeClass('activeMenu');
+                $('.menu button').eq(2).addClass('activeMenu');
+                openTabsTask();
                 break;
             case hashes[4]:
-                openTabsTask();
+                $('.activeMenu').removeClass('activeMenu');
+                $('.menu button').eq(3).addClass('activeMenu');
+                openRunesTask();
                 break;
         }
     }
@@ -114,35 +153,36 @@ $(document).ready(function() {
     function SwitchHash(hashName) {
         UrlStr = hashName;
         location.hash = UrlStr;
-        console.log(UrlStr);
     }
-
-    SwitchToPage();
 
     function openFormTask() {
         $('.page-content').load('src/templates/pages/form_numbers.html');
-        SwitchHash('form');
     }
 
     function openTableTask() {
-        $('.page-content').load('src/templates/pages/table_json.html');
-        SwitchHash('table');
+        $('.page-content').load('src/templates/pages/table_json.html', getTableJson);
     }
 
     function openTabsTask() {
-        $('.page-content').load('src/templates/pages/tabs.html');
-        SwitchHash('tabs');
-        // from tabs.js
-        LoadFirstTabContent();
+        $('.page-content').load('src/templates/pages/tabs.html', function(responseTxt, statusTxt, xhr) {
+            if (statusTxt == "success")
+            // from tabs.js
+                LoadFirstTabContent();
+            if (statusTxt == "error")
+                console.log("Error: " + xhr.status + ": " + xhr.statusText);
+        });
     }
 
     function openRunesTask() {
         $('.page-content').load('src/templates/pages/rune_game.html');
-        SwitchHash('runes');
     }
 
-    $('.menu button').eq(0).click(openFormTask);
-    $('.menu button').eq(1).click(openTableTask);
-    $('.menu button').eq(2).click(openTabsTask);
-    $('.menu button').eq(3).click(openRunesTask);
+    // button events 
+    $('.menu button').eq(0).click(function() { SwitchHash('form') });
+    $('.menu button').eq(1).click(function() { SwitchHash('table') });
+    $('.menu button').eq(2).click(function() { SwitchHash('tabs') });
+    $('.menu button').eq(3).click(function() { SwitchHash('runes') });
+
+    // first event
+    SwitchToPage();
 });
